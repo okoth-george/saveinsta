@@ -1,0 +1,26 @@
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+      #- ./backend/cookies:/app/cookies
+    environment:
+      - NODE_ENV=development
+     # - INSTAGRAM_COOKIE_FILE=/app/cookies/instagram.txt
+    
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://localhost:5000
+      - CHOKIDAR_USEPOLLING=true

@@ -1,0 +1,5 @@
+backend/cookies/
+*.txt
+node_modules
+.git
+.env

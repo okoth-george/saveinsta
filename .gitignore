@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment files
+.env
+.env.local
+.env.production
+*/.env
+
+# Cookies — never commit these
+backend/cookies/
+*.txt
+
+# Build output
+frontend/dist/
+frontend/build/
+
+# Docker
+.docker/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temp files
+/tmp/
