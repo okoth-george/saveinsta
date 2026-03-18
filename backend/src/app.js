@@ -7,7 +7,17 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // 1. Middleware
-app.use(cors()); // Allows your React frontend to talk to this API
+// ✅ Allow both local dev and production Vercel domain
+app.use(cors({
+  origin: [
+    'http://localhost:5173',                        // local dev
+    'https://saveinsta.vercel.app',                 // Vercel production
+    process.env.FRONTEND_URL,                       // from env var
+  ].filter(Boolean),
+  methods: ['GET', 'POST'],
+  credentials: true,
+}));
+
 app.use(express.json()); // Allows the server to parse JSON bodies
 
 // 2. Health Check Route (Good for testing if Docker is working)
