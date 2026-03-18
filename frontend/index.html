@@ -1,24 +1,36 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/icon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/icon-16x16.png" />
+<head>
+  <meta charset="UTF-8" />
 
-    <!-- iOS home screen icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <!-- ✅ THE CRITICAL FIX — without this phones render at desktop width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
 
-    <!-- PWA manifest -->
-    <link rel="manifest" href="/site.webmanifest" />
+  <!-- SEO -->
+  <meta name="description" content="Download Instagram videos, reels, photos and carousels for free. No login required." />
+  <meta name="theme-color" content="#833ab4" />
 
-    <!-- Mobile browser theme color -->
-    <meta name="theme-color" content="#e8356d" />
-    <title>frontend</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  <!-- Open Graph (looks good when shared on WhatsApp/social) -->
+  <meta property="og:title" content="SaveInsta — Instagram Video Downloader" />
+  <meta property="og:description" content="Download Instagram videos, reels and photos instantly. Free, no login." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/icon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/icon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+
+  <title>SaveInsta — Instagram Video Downloader</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
 </html>

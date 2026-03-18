@@ -780,3 +780,151 @@ body::after {
   .cookie-body { padding: 0.9rem 1rem; }
   .cookie-steps li { font-size: 0.8rem; }
 }
+
+/* ── MOBILE FIXES ── */
+
+/* Prevent horizontal scroll on all screens */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Fix input zoom on iOS — font-size must be 16px or browser zooms in */
+@media (max-width: 600px) {
+  .url-input {
+    font-size: 16px !important;
+  }
+
+  /* Full width glass card — no side gaps */
+  .glass-card {
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 1rem;
+  }
+
+  /* Result card full width */
+  .result-card {
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  /* Error box full width */
+  .error-box {
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  /* Download button full width inside result card */
+  .btn-download {
+    font-size: 0.95rem;
+    padding: 0.9rem;
+  }
+
+  /* Tighter hero on small screens */
+  .hero {
+    padding: 2rem 0 3rem;
+  }
+
+  /* How section full width */
+  .how-section {
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 3rem;
+  }
+
+  /* Thumbnail shorter on mobile */
+  .result-thumb {
+    max-height: 220px;
+  }
+
+  .result-thumb-wrap {
+    max-height: 220px;
+  }
+
+  /* Quality pills wrap and fill better */
+  .quality-pills {
+    gap: 6px;
+  }
+
+  .quality-pill {
+    font-size: 0.78rem;
+    padding: 6px 12px;
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Cookie section */
+  .cookie-steps li {
+    font-size: 0.78rem;
+  }
+
+  /* Footer centered on mobile */
+  .footer {
+    padding: 1.25rem 1rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  /* Nav padding tighter */
+  .nav {
+    padding: 0.85rem 1rem;
+  }
+
+  /* Reduce orb size so it doesn't cause overflow */
+  body::after {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: -100px;
+  }
+}
+
+/* ── Extra small phones (iPhone SE, Galaxy A series) ── */
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 1.6rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-sub {
+    font-size: 0.88rem;
+  }
+
+  .hero-badge {
+    font-size: 0.72rem;
+    padding: 5px 12px;
+  }
+
+  .glass-card {
+    width: calc(100% - 1.5rem);
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+    padding: 0.875rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* ── Safe area for notched phones (iPhone X+) ── */
+@supports (padding: max(0px)) {
+  .nav {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .footer {
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
+}
