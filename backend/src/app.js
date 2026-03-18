@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors({
   origin: [
     'http://localhost:5173',                        // local dev
-    'https://saveinsta.vercel.app',                 // Vercel production
+    'https://saveinsta-jade.vercel.app/',                 // Vercel production
     process.env.FRONTEND_URL,                       // from env var
   ].filter(Boolean),
   methods: ['GET', 'POST'],
