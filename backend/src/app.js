@@ -4,14 +4,14 @@ const downloadRoutes = require('./routes/downloadRoutes');
 const mediaRoutes = require('./routes/mediaRoutes');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+
 
 // 1. Middleware
 // ✅ Allow both local dev and production Vercel domain
 app.use(cors({
   origin: [
     'http://localhost:5173',                        // local dev
-    'https://saveinsta-jade.vercel.app/',                 // Vercel production
+    'https://saveinsta-jade.vercel.app',                 // Vercel production
     process.env.FRONTEND_URL,                       // from env var
   ].filter(Boolean),
   methods: ['GET', 'POST'],
